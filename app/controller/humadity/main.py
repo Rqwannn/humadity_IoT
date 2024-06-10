@@ -11,6 +11,5 @@ class Humadity(Resource):
         return jsonify({"humidity": sensor_data["humidity"]})
     
 class Sensor(Resource):
-
     def get(self):
         return jsonify(sensor_data)
