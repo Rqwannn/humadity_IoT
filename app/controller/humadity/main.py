@@ -16,14 +16,9 @@ class Sensor(Resource):
         return jsonify(sensor_data)
     
     def post(self):
-        data = request.get_json()
-
-        if not data:
-            return jsonify({"error": "No data provided"})
-
-        sensor_data["temperature"] = data.get('temperature')
-        sensor_data["humidity"] = data.get('humidity')
-        sensor_data["timestamp"] = data.get('timestamp')
+        sensor_data["temperature"] = request.form.get('temperature')
+        sensor_data["humidity"] = request.form.get('humidity')
+        sensor_data["timestamp"] = request.form.get('timestamp')
 
         # Proses data sensor di sini, misalnya menyimpan ke database atau memproses lebih lanjut
         print(f"Received sensor data: Temperature: {sensor_data['temperature']}, Humidity: {sensor_data['humidity']}, Timestamp: {sensor_data['timestamp']}")
