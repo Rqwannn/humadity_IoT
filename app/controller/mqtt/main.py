@@ -2,7 +2,8 @@ import paho.mqtt.client as mqtt
 
 sensor_data = {
     "temperature": None,
-    "humidity": None
+    "humidity": None,
+    "timestamp": None
 }
 
 # MQTT settings

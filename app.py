@@ -4,8 +4,8 @@ import threading
 
 app = create_app()
 
-mqtt_thread = threading.Thread(target=mqtt_loop)
-mqtt_thread.start()
+# mqtt_thread = threading.Thread(target=mqtt_loop)
+# mqtt_thread.start()
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)
